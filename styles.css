@@ -87,24 +87,24 @@ main { width: min(1260px, calc(100% - 32px)); margin: 48px auto 76px; }
 
 .key-dashboard { min-width: 0; }
 .key-dashboard > h2 { margin: 0 0 17px; color: var(--cyan); font-family: var(--mono); font-size: 13px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; }
-.harmony-grid, .scale-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-.scale-grid { margin-top: 8px; }
+.harmony-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .harmony-card, .scale-card { min-width: 0; padding: 21px; border: 1px solid var(--faint); border-radius: 8px; background: var(--raised); }
 .primary-card { border-color: rgba(51,245,224,.14); }
 .relative-card { border-color: rgba(255,64,158,.14); }
 .card-topline { display: flex; align-items: center; justify-content: space-between; color: var(--muted); font-family: var(--mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; }
-.card-topline small { color: rgba(255,255,255,.25); font-size: inherit; }
 .harmony-card h3, .scale-card h3 { margin: 12px 0 14px; color: rgba(255,255,255,.88); font-size: 23px; font-weight: 600; }
 .primary-card h3 { color: var(--cyan); }
 .relative-card h3 { color: var(--magenta); }
-.large-chords { display: flex; flex-wrap: wrap; gap: 5px; }
+.large-chords { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
 .large-chords span { min-width: 48px; padding: 9px 11px; border: 1px solid rgba(255,255,255,.11); border-radius: 5px; color: rgba(255,255,255,.84); text-align: center; font-family: var(--mono); font-size: 13px; }
 .card-label { color: var(--muted); font-family: var(--mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
 .scale-card h3 { margin-bottom: 12px; font-size: 17px; }
+.pentatonic-label { display: block; margin-top: 22px; }
 .note-row { display: flex; flex-wrap: wrap; gap: 4px; }
-.note-row span { display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid rgba(255,255,255,.11); border-radius: 50%; font-family: var(--mono); font-size: 11px; }
-.major-scale .note-row span { color: var(--cyan); }
-.minor-scale .note-row span { color: var(--magenta); }
+.note-row { margin-top: 9px; gap: 18px; }
+.note-row span { color: rgba(255,255,255,.76); font-family: var(--mono); font-size: 13px; }
+.primary-card .note-row span { color: var(--cyan); }
+.relative-card .note-row span { color: var(--magenta); }
 
 .diatonic-strip { margin: 0 34px 34px; padding: 20px 22px; display: flex; align-items: center; justify-content: space-between; gap: 24px; border: 1px solid var(--faint); border-radius: 8px; background: rgba(17,22,32,.55); }
 .diatonic-strip > div:first-child { flex: 0 0 auto; }

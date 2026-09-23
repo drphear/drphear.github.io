@@ -101,8 +101,6 @@ function renderCircle() {
 function selectKey(tonic, mode, shouldScroll = false) {
   selected = { tonic, mode };
   const relative = relativeKey(tonic, mode);
-  const major = mode === "major" ? selected : relative;
-  const minor = mode === "minor" ? selected : relative;
 
   document.querySelectorAll(".key-button").forEach((button) => {
     const isSelected = Number(button.dataset.tonic) === tonic && button.dataset.mode === mode;
@@ -117,10 +115,8 @@ function selectKey(tonic, mode, shouldScroll = false) {
   document.querySelector("#primary-chords").innerHTML = chordMarkup(primaryChords(tonic, mode));
   document.querySelector("#relative-name").textContent = keyName(relative.tonic, relative.mode);
   document.querySelector("#relative-chords").innerHTML = chordMarkup(primaryChords(relative.tonic, relative.mode));
-  document.querySelector("#major-pentatonic-name").textContent = keyName(major.tonic, "major");
-  document.querySelector("#major-pentatonic-notes").innerHTML = pentatonic(major.tonic, "major").map((note) => `<span>${note}</span>`).join("");
-  document.querySelector("#minor-pentatonic-name").textContent = keyName(minor.tonic, "minor");
-  document.querySelector("#minor-pentatonic-notes").innerHTML = pentatonic(minor.tonic, "minor").map((note) => `<span>${note}</span>`).join("");
+  document.querySelector("#primary-pentatonic-notes").innerHTML = pentatonic(tonic, mode).map((note) => `<span>${note}</span>`).join("");
+  document.querySelector("#relative-pentatonic-notes").innerHTML = pentatonic(relative.tonic, relative.mode).map((note) => `<span>${note}</span>`).join("");
   document.querySelector("#palette-key").textContent = keyName(tonic, mode);
   document.querySelector("#diatonic-chords").innerHTML = diatonicChords(tonic, mode)
     .map((chord) => `<div class="degree-chord"><strong>${chord.name}</strong><small>${chord.degree}</small></div>`)
