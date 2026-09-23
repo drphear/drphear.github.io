@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="An interactive circle of fifths with chords, relative keys, and pentatonic scales." />
+    <title>Circle of Phear</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <a class="brand" href="index.html" aria-label="Back to drphear home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>CIRCLE OF <strong>PHEAR</strong></span>
+      </a>
+      <a class="header-note" href="index.html">DRPHEAR</a>
+    </header>
+
+    <main>
+      <section class="panel" id="explore" aria-labelledby="circle-title">
+        <div class="panel-header">
+          <h1 id="circle-title"><span class="panel-icon" aria-hidden="true">◎</span> CIRCLE OF FIFTHS</h1>
+          <div class="legend" aria-label="Circle legend">
+            <span><i class="major-dot"></i> Major</span>
+            <span><i class="minor-dot"></i> Minor</span>
+          </div>
+        </div>
+
+        <div class="circle-layout">
+          <div class="circle-stage">
+            <div class="orbit orbit-outer"></div>
+            <div class="orbit orbit-inner"></div>
+            <div class="circle-keys" id="circle-keys" role="group" aria-label="Circle of fifths key selector"></div>
+            <div class="circle-center" aria-live="polite">
+              <span>KEY</span>
+              <strong id="center-key">C</strong>
+              <small id="center-mode">major</small>
+            </div>
+          </div>
+
+          <div class="key-dashboard" aria-labelledby="selected-heading">
+            <h2 id="selected-heading"><span id="key-title">C major</span></h2>
+
+            <div class="harmony-grid">
+              <article class="harmony-card primary-card">
+                <div class="card-topline"><span>Selected key</span><small>I · IV · V</small></div>
+                <h3 id="primary-name">C major</h3>
+                <div class="large-chords" id="primary-chords"></div>
+              </article>
+
+              <article class="harmony-card relative-card">
+                <div class="card-topline"><span>Relative key</span><small>i · iv · v</small></div>
+                <h3 id="relative-name">A minor</h3>
+                <div class="large-chords" id="relative-chords"></div>
+              </article>
+            </div>
+
+            <div class="scale-grid">
+              <article class="scale-card major-scale">
+                <span class="card-label">Major pentatonic</span>
+                <h3 id="major-pentatonic-name">C major</h3>
+                <div class="note-row" id="major-pentatonic-notes"></div>
+              </article>
+              <article class="scale-card minor-scale">
+                <span class="card-label">Minor pentatonic</span>
+                <h3 id="minor-pentatonic-name">A minor</h3>
+                <div class="note-row" id="minor-pentatonic-notes"></div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="diatonic-strip">
+          <div>
+            <span class="card-label">Diatonic chords</span>
+            <strong id="palette-key">C major</strong>
+          </div>
+          <div class="diatonic-chords" id="diatonic-chords"></div>
+        </div>
+      </section>
+
+      <section class="panel finder" id="chord-finder" aria-labelledby="finder-title">
+        <div class="panel-header">
+          <h2 id="finder-title"><span class="panel-icon" aria-hidden="true">⌁</span> CHORD FINDER</h2>
+          <div class="example-list" aria-label="Example progressions">
+            <button class="example-button" type="button" data-chords="Am,F,C,G">Am · F · C · G</button>
+            <button class="example-button" type="button" data-chords="D,G,A,Bm">D · G · A · Bm</button>
+          </div>
+        </div>
+
+        <div class="finder-tool">
+          <label for="chord-input">Enter chords</label>
+          <div class="chord-entry" id="chord-entry">
+            <div class="chord-chips" id="chord-chips"></div>
+            <input id="chord-input" type="text" placeholder="Am, F, C, G..." autocomplete="off" spellcheck="false" aria-describedby="input-help" />
+            <button id="analyze-button" type="button">Find key</button>
+          </div>
+          <p class="input-help" id="input-help">Comma or space separated</p>
+          <p class="input-error" id="input-error" role="alert"></p>
+
+          <div class="finder-results" id="finder-results" hidden>
+            <div class="best-match">
+              <div>
+                <span class="card-label">Best match</span>
+                <h3 id="match-name">C major</h3>
+                <p id="match-detail"></p>
+              </div>
+              <div class="match-score" aria-label="Match score"><strong id="match-score">100</strong><span>% FIT</span></div>
+            </div>
+            <div class="suggestion-block">
+              <span class="card-label">Try next</span>
+              <div class="suggested-chords" id="suggested-chords"></div>
+            </div>
+            <div class="alternatives">
+              <span class="card-label">Also works in</span>
+              <div id="alternative-keys"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>CIRCLE OF PHEAR <span>·</span> INTERACTIVE MUSIC THEORY</footer>
+    <script src="app.js"></script>
+  </body>
+</html>

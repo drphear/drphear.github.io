@@ -1,0 +1,121 @@
+:root {
+  --background: #05070d;
+  --surface: #0b0f18;
+  --cyan: #33f5e0;
+  --text: rgba(255, 255, 255, 0.88);
+  --muted: rgba(255, 255, 255, 0.42);
+  --line: rgba(255, 255, 255, 0.1);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 50% 35%, rgba(51, 245, 224, 0.07), transparent 28%),
+    var(--background);
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  width: min(520px, calc(100% - 48px));
+  padding: 72px 0;
+  text-align: center;
+}
+
+.monogram {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 24px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(51, 245, 224, 0.32);
+  border-radius: 50%;
+  box-shadow: 0 0 28px rgba(51, 245, 224, 0.08);
+}
+
+.monogram span {
+  color: var(--cyan);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 27px;
+  font-style: italic;
+}
+
+.monogram i {
+  position: absolute;
+  right: 2px;
+  bottom: 5px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 8px var(--cyan);
+}
+
+h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(56px, 12vw, 82px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.07em;
+}
+
+h1 span { color: var(--cyan); }
+
+p {
+  margin: 18px 0 48px;
+  color: var(--muted);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+nav { border-top: 1px solid var(--line); }
+
+nav a {
+  min-height: 72px;
+  padding: 0 4px;
+  display: grid;
+  grid-template-columns: 42px 1fr auto;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  color: var(--text);
+  text-align: left;
+  text-decoration: none;
+  transition: padding 160ms ease, border-color 160ms ease;
+}
+
+nav a:hover, nav a:focus-visible {
+  padding-left: 12px;
+  border-color: rgba(51, 245, 224, 0.38);
+  outline: none;
+}
+
+.project-number {
+  color: rgba(255, 255, 255, 0.25);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
+  font-size: 8px;
+}
+
+.project-name {
+  font-family: ui-rounded, "SF Pro Rounded", system-ui, sans-serif;
+  font-size: 15px;
+}
+
+.project-arrow {
+  color: var(--cyan);
+  font-size: 17px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  nav a { transition: none; }
+}
