@@ -79,7 +79,7 @@ function renderCircle() {
     const angle = (index * 30 - 90) * (Math.PI / 180);
     const options = [
       { label: key.major, tonic: key.tonic, mode: "major", radius: 42 },
-      { label: key.minor, tonic: (key.tonic + 9) % 12, mode: "minor", radius: 29 },
+      { label: key.minor, tonic: (key.tonic + 9) % 12, mode: "minor", radius: 27.5 },
     ];
 
     options.forEach((option) => {

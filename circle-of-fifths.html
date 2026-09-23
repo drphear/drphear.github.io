@@ -6,7 +6,7 @@
     <meta name="description" content="An interactive circle of fifths with chords, relative keys, and pentatonic scales." />
     <title>Circle of Phear</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css?v=20260923-4" />
+    <link rel="stylesheet" href="styles.css?v=20260923-6" />
   </head>
   <body>
     <header class="site-header" id="top">
@@ -66,17 +66,20 @@
         </div>
       </section>
 
-      <section class="panel finder" id="chord-finder" aria-labelledby="finder-title">
-        <div class="panel-header">
+      <details class="panel finder" id="chord-finder">
+        <summary class="panel-header">
           <h2 id="finder-title"><span class="panel-icon" aria-hidden="true">⌁</span> CHORD FINDER</h2>
-          <div class="example-list" aria-label="Example progressions">
-            <button class="example-button" type="button" data-chords="Am,F,C,G">Am · F · C · G</button>
-            <button class="example-button" type="button" data-chords="D,G,A,Bm">D · G · A · Bm</button>
-          </div>
-        </div>
+          <span class="panel-toggle" aria-hidden="true"></span>
+        </summary>
 
         <div class="finder-tool">
-          <label for="chord-input">Enter chords</label>
+          <div class="finder-input-header">
+            <label for="chord-input">Enter chords</label>
+            <div class="example-list" aria-label="Example progressions">
+              <button class="example-button" type="button" data-chords="Am,F,C,G">Am · F · C · G</button>
+              <button class="example-button" type="button" data-chords="D,G,A,Bm">D · G · A · Bm</button>
+            </div>
+          </div>
           <div class="chord-entry" id="chord-entry">
             <div class="chord-chips" id="chord-chips"></div>
             <input id="chord-input" type="text" placeholder="Am, F, C, G..." autocomplete="off" spellcheck="false" aria-describedby="input-help" />
@@ -104,10 +107,10 @@
             </div>
           </div>
         </div>
-      </section>
+      </details>
     </main>
 
     <footer>CIRCLE OF PHEAR <span>·</span> INTERACTIVE MUSIC THEORY</footer>
-    <script src="app.js?v=20260923-4"></script>
+    <script src="app.js?v=20260923-6"></script>
   </body>
 </html>
