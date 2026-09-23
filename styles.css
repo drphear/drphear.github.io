@@ -66,27 +66,19 @@ main { width: min(1260px, calc(100% - 32px)); margin: 48px auto 76px; }
 
 .circle-layout { display: grid; grid-template-columns: 600px 1fr; gap: 32px; padding: 34px; align-items: center; }
 .circle-stage { position: relative; width: 100%; aspect-ratio: 1; isolation: isolate; }
-.circle-stage::before { content: ""; position: absolute; inset: 3%; border-radius: 50%; background: repeating-conic-gradient(from -7.5deg, transparent 0deg 29.55deg, rgba(51,245,224,.24) 29.55deg 30deg); -webkit-mask: radial-gradient(circle, transparent 0 42.8%, #000 43.2% 44.7%, transparent 45.1%); mask: radial-gradient(circle, transparent 0 42.8%, #000 43.2% 44.7%, transparent 45.1%); z-index: -1; }
 .orbit { position: absolute; border-radius: 50%; pointer-events: none; }
-.orbit-outer { inset: 8%; border: 2px solid rgba(51,245,224,.25); box-shadow: inset 0 0 35px rgba(51,245,224,.025), 0 0 18px rgba(51,245,224,.025); }
-.orbit-inner { inset: 21%; border: 2px solid rgba(255,64,158,.25); box-shadow: inset 0 0 28px rgba(255,64,158,.02), 0 0 16px rgba(255,64,158,.025); }
+.orbit-outer { inset: 8%; border: 3px solid rgba(51,245,224,.3); box-shadow: inset 0 0 35px rgba(51,245,224,.025), 0 0 18px rgba(51,245,224,.025); }
+.orbit-inner { inset: 21%; border: 3px solid rgba(255,64,158,.3); box-shadow: inset 0 0 28px rgba(255,64,158,.02), 0 0 16px rgba(255,64,158,.025); }
 
 .key-button { position: absolute; transform: translate(-50%, -50%); display: grid; place-items: center; padding: 0; border-radius: 50%; background: var(--raised); cursor: pointer; z-index: 2; transition: transform 140ms ease, background 140ms ease, color 140ms ease, box-shadow 140ms ease; }
 .key-button:hover { transform: translate(-50%, -50%) scale(1.08); }
 .key-button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
-.key-button.major { width: 58px; height: 58px; border: 1px solid rgba(51,245,224,.3); color: rgba(255,255,255,.82); font-size: 16px; font-weight: 600; }
-.key-button.minor { width: 48px; height: 48px; border: 1px solid rgba(255,64,158,.32); color: rgba(255,255,255,.72); font-size: 13px; font-weight: 600; }
+.key-button.major { width: 70px; height: 70px; border: 2px solid rgba(51,245,224,.4); color: rgba(255,255,255,.82); font-size: 20px; font-weight: 600; }
+.key-button.minor { width: 58px; height: 58px; border: 2px solid rgba(255,64,158,.4); color: rgba(255,255,255,.72); font-size: 16px; font-weight: 600; }
 .key-button.major.selected { color: var(--background); background: var(--cyan); border-color: var(--cyan); box-shadow: 0 0 17px rgba(51,245,224,.4); }
 .key-button.minor.selected { color: var(--background); background: var(--magenta); border-color: var(--magenta); box-shadow: 0 0 17px rgba(255,64,158,.4); }
 
-.circle-center { position: absolute; inset: 38%; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid rgba(51,245,224,.15); border-radius: 50%; background: var(--raised); box-shadow: 0 0 40px rgba(0,0,0,.34); }
-.circle-center span, .circle-center small { font-family: var(--mono); text-transform: uppercase; letter-spacing: .12em; }
-.circle-center span { color: var(--muted); font-size: 10px; }
-.circle-center strong { margin: 3px 0 1px; color: var(--cyan); font-size: clamp(36px, 4vw, 52px); line-height: 1; text-shadow: 0 0 14px rgba(51,245,224,.28); }
-.circle-center small { color: var(--muted); font-size: 10px; }
-
 .key-dashboard { min-width: 0; }
-.key-dashboard > h2 { margin: 0 0 17px; color: var(--cyan); font-family: var(--mono); font-size: 13px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; }
 .harmony-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .harmony-card, .scale-card { min-width: 0; padding: 21px; border: 1px solid var(--faint); border-radius: 8px; background: var(--raised); }
 .primary-card { border-color: rgba(51,245,224,.14); }
@@ -165,8 +157,8 @@ footer span { margin: 0 8px; color: rgba(51,245,224,.35); }
   .panel-header { padding: 0 12px; }
   .circle-layout { padding: 10px 4px 16px; gap: 12px; }
   .key-dashboard { padding: 0 8px; }
-  .key-button.major { width: 42px; height: 42px; font-size: 12px; }
-  .key-button.minor { width: 35px; height: 35px; font-size: 10px; }
+  .key-button.major { width: 46px; height: 46px; font-size: 13px; }
+  .key-button.minor { width: 38px; height: 38px; font-size: 10px; }
   .harmony-card, .scale-card { padding: 13px; }
   .harmony-card h3 { font-size: 16px; }
   .diatonic-strip { margin: 0 12px 12px; align-items: flex-start; flex-direction: column; gap: 11px; }

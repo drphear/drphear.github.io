@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="An interactive circle of fifths with chords, relative keys, and pentatonic scales." />
     <title>Circle of Phear</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css?v=20260923-4" />
   </head>
   <body>
     <header class="site-header" id="top">
@@ -31,16 +32,9 @@
             <div class="orbit orbit-outer"></div>
             <div class="orbit orbit-inner"></div>
             <div class="circle-keys" id="circle-keys" role="group" aria-label="Circle of fifths key selector"></div>
-            <div class="circle-center" aria-live="polite">
-              <span>KEY</span>
-              <strong id="center-key">C</strong>
-              <small id="center-mode">major</small>
-            </div>
           </div>
 
-          <div class="key-dashboard" aria-labelledby="selected-heading">
-            <h2 id="selected-heading"><span id="key-title">C major</span></h2>
-
+          <div class="key-dashboard" aria-label="Key details">
             <div class="harmony-grid">
               <article class="harmony-card primary-card">
                 <div class="card-topline"><span>Selected key</span></div>
@@ -114,6 +108,6 @@
     </main>
 
     <footer>CIRCLE OF PHEAR <span>·</span> INTERACTIVE MUSIC THEORY</footer>
-    <script src="app.js"></script>
+    <script src="app.js?v=20260923-4"></script>
   </body>
 </html>

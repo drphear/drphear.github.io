@@ -108,9 +108,6 @@ function selectKey(tonic, mode, shouldScroll = false) {
     button.setAttribute("aria-pressed", String(isSelected));
   });
 
-  document.querySelector("#center-key").textContent = noteName(tonic, tonic, mode);
-  document.querySelector("#center-mode").textContent = mode;
-  document.querySelector("#key-title").textContent = keyName(tonic, mode);
   document.querySelector("#primary-name").textContent = keyName(tonic, mode);
   document.querySelector("#primary-chords").innerHTML = chordMarkup(primaryChords(tonic, mode));
   document.querySelector("#relative-name").textContent = keyName(relative.tonic, relative.mode);
