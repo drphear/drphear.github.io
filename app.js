@@ -114,11 +114,6 @@ function selectKey(tonic, mode, shouldScroll = false) {
   document.querySelector("#relative-chords").innerHTML = chordMarkup(primaryChords(relative.tonic, relative.mode));
   document.querySelector("#primary-pentatonic-notes").innerHTML = pentatonic(tonic, mode).map((note) => `<span>${note}</span>`).join("");
   document.querySelector("#relative-pentatonic-notes").innerHTML = pentatonic(relative.tonic, relative.mode).map((note) => `<span>${note}</span>`).join("");
-  document.querySelector("#palette-key").textContent = keyName(tonic, mode);
-  document.querySelector("#diatonic-chords").innerHTML = diatonicChords(tonic, mode)
-    .map((chord) => `<div class="degree-chord"><strong>${chord.name}</strong><small>${chord.degree}</small></div>`)
-    .join("");
-
   if (shouldScroll) document.querySelector("#explore").scrollIntoView({ behavior: "smooth" });
 }
 
